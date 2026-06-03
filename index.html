@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobDirect — Direct Jobs from Top Companies in India. No Middlemen.</title>
+<meta name="description" content="Apply directly to top companies in India. No recruiters, no job boards, no spam. AI match scoring, resume tailoring, and real-time alerts. Stripe, Databricks, PhonePe, Oracle and 168 more." />
+<meta name="keywords" content="jobs in India, direct hiring India, tech jobs Bangalore, jobs at Stripe India, AI job matching, resume tailoring India, job alerts India, jobs without recruiters" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://jobdirect.in" />
+<meta property="og:title" content="JobDirect — Apply Directly to Top Companies in India" />
+<meta property="og:description" content="Verified jobs from Stripe, Databricks, PhonePe, Oracle and 168 more. AI scores your resume, tailors it per job, alerts you the moment a match opens." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jobdirect.in" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"JobDirect","description":"Direct job listings from top companies in India with AI-powered match scoring and resume tailoring","applicationCategory":"BusinessApplication","operatingSystem":"iOS, Android","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"INR"},{"@type":"Offer","name":"Pro","price":"699","priceCurrency":"INR"},{"@type":"Offer","name":"Elite","price":"1099","priceCurrency":"INR"}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --night:#07080C;--deep:#0E1019;--surface:#141620;--card:#1A1D2B;
+  --border:#ffffff0f;--border2:#ffffff18;--white:#FFFFFF;--off:#E8E6FF;
+  --muted:#7A7F9A;--dim:#4A4E62;--violet:#7C6FFF;--violet2:#5B4FD4;
+  --violet3:#9B91FF;--cyan:#00D4C8;--cyan2:#00A89F;--gold:#FFB340;
+  --gold2:#E8962A;--rose:#FF5F7E;--green:#22D17A;--green2:#18A05C;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--night);color:var(--white);overflow-x:hidden}
+.cursor{position:fixed;width:10px;height:10px;background:var(--violet);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s;mix-blend-mode:screen}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(124,111,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;transition:background .4s,border .4s}
+nav.scrolled{background:rgba(7,8,12,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Sora',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.8px;background:linear-gradient(135deg,var(--white) 40%,var(--violet3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--white)}
+.nav-cta{background:var(--violet);color:var(--white);border:none;padding:11px 26px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 0 20px rgba(124,111,255,0.3)}
+.nav-cta:hover{background:var(--violet2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden;gap:60px}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.orb1{width:600px;height:600px;background:radial-gradient(circle,rgba(124,111,255,0.18) 0%,transparent 70%);top:-100px;left:-100px;animation:orb-drift1 12s ease-in-out infinite}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(0,212,200,0.12) 0%,transparent 70%);top:30%;right:-80px;animation:orb-drift2 15s ease-in-out infinite}
+.orb3{width:400px;height:400px;background:radial-gradient(circle,rgba(255,179,64,0.08) 0%,transparent 70%);bottom:0;left:30%;animation:orb-drift3 18s ease-in-out infinite}
+@keyframes orb-drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,30px)}}
+@keyframes orb-drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+@keyframes orb-drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black,transparent)}
+.hero-left{position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.25);border-radius:100px;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--violet3);margin-bottom:32px;opacity:0;animation:slide-up .7s .2s forwards}
+.badge-pulse{width:7px;height:7px;border-radius:50%;background:var(--violet);box-shadow:0 0 8px var(--violet);animation:pulse-glow 2s ease-in-out infinite}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 6px var(--violet)}50%{box-shadow:0 0 16px var(--violet),0 0 30px rgba(124,111,255,0.4)}}
+h1{font-family:'Sora',sans-serif;font-size:clamp(44px,5vw,70px);font-weight:800;line-height:1.0;letter-spacing:-3px;margin-bottom:24px;opacity:0;animation:slide-up .7s .35s forwards}
+.h1-line{display:block}
+.h1-grad{background:linear-gradient(135deg,var(--violet3) 0%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.h1-gold{background:linear-gradient(135deg,var(--gold) 0%,var(--rose) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;font-weight:400;line-height:1.75;color:var(--muted);max-width:480px;margin-bottom:48px;opacity:0;animation:slide-up .7s .5s forwards}
+.hero-sub strong{color:var(--off);font-weight:600}
+.hero-actions{display:flex;gap:12px;margin-bottom:20px;opacity:0;animation:slide-up .7s .65s forwards;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--violet),var(--violet2));color:var(--white);border:none;border-radius:100px;padding:15px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .3s;box-shadow:0 4px 24px rgba(124,111,255,0.4);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(124,111,255,0.6)}
+.btn-ghost{background:transparent;border:1px solid var(--border2);color:var(--muted);border-radius:100px;padding:15px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{border-color:var(--violet3);color:var(--violet3)}
+.hero-note{font-size:12px;color:var(--dim);font-weight:500;letter-spacing:0.02em;opacity:0;animation:slide-up .7s .8s forwards}
+@keyframes slide-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* PHONE */
+.hero-right{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;opacity:0;animation:slide-up .8s .5s forwards}
+.phone-outer{position:relative;width:300px}
+.phone-glow{position:absolute;inset:-40px;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(124,111,255,0.2),transparent 70%);filter:blur(20px);pointer-events:none}
+.phone{background:var(--surface);border:1px solid var(--border2);border-radius:28px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,0.6),0 0 0 0.5px rgba(255,255,255,0.06)}
+.phone-bar{background:var(--deep);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.phone-title{font-family:'Sora',sans-serif;font-size:14px;font-weight:700;letter-spacing:-0.5px}
+.live-chip{display:flex;align-items:center;gap:6px;background:rgba(34,209,122,0.1);border:1px solid rgba(34,209,122,0.2);border-radius:100px;padding:5px 12px;font-size:10px;font-weight:800;color:var(--green);letter-spacing:0.08em;text-transform:uppercase}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse-glow2 1.5s ease-in-out infinite}
+@keyframes pulse-glow2{0%,100%{box-shadow:0 0 4px var(--green)}50%{box-shadow:0 0 12px var(--green)}}
+.phone-body{padding:12px 14px 16px;display:flex;flex-direction:column;gap:8px}
+.job-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 16px;position:relative;overflow:hidden}
+.job-card.hot{border-color:rgba(0,212,200,0.3);background:linear-gradient(135deg,rgba(0,212,200,0.06),var(--card))}
+.jc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.jc-company{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.new-tag{font-size:9px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(135deg,rgba(0,212,200,0.2),rgba(0,212,200,0.1));border:1px solid rgba(0,212,200,0.3);color:var(--cyan);border-radius:100px;padding:3px 9px}
+.jc-role{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;letter-spacing:-0.4px;margin-bottom:10px}
+.jc-bottom{display:flex;align-items:center;gap:6px}
+.jc-tag{font-size:10px;font-weight:600;color:var(--muted);background:rgba(255,255,255,0.05);border-radius:6px;padding:3px 8px}
+.jc-match{margin-left:auto;font-size:11px;font-weight:800;color:var(--violet3)}
+.jc-match.high{color:var(--green)}
+.comp-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.comp-icon{width:28px;height:28px;border-radius:8px;background:rgba(255,179,64,0.1);border:1px solid rgba(255,179,64,0.2);display:flex;align-items:center;justify-content:center;font-size:13px}
+.comp-text{flex:1}
+.comp-label{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:2px}
+.comp-val{font-size:12px;font-weight:700;color:var(--gold)}
+
+/* TICKER */
+.ticker-wrap{border-top:1px solid var(--border);padding:20px 48px;overflow:hidden;display:flex;align-items:center;gap:24px}
+.ticker-lbl{font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);white-space:nowrap;flex-shrink:0}
+.ticker-track{display:flex;gap:32px;animation:tick 32s linear infinite;white-space:nowrap}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.t-pill{font-size:13px;font-weight:600;color:var(--dim);transition:color .2s;cursor:default;padding:0 4px}
+.t-pill:hover{color:var(--violet3)}
+.t-sep{color:var(--dim);font-size:12px;padding:0 4px}
+.t-logo{height:16px;width:16px;object-fit:contain;opacity:0.5;transition:opacity .2s;vertical-align:middle;filter:grayscale(1) brightness(2);border-radius:3px;margin-right:4px}
+.t-logo:hover{opacity:0.6}
+
+/* SECTIONS */
+.section{padding:100px 48px;position:relative}
+.section-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--violet3);margin-bottom:16px}
+.section-eyebrow::before{content:'';width:20px;height:1px;background:var(--violet3)}
+.sec-h2{font-family:'Sora',sans-serif;font-size:clamp(34px,3.8vw,54px);font-weight:800;letter-spacing:-2px;line-height:1.06;margin-bottom:16px}
+.sec-sub{font-size:16px;color:var(--muted);font-weight:400;line-height:1.75;max-width:520px}
+
+/* PROBLEM */
+.problem-section{background:linear-gradient(180deg,var(--night) 0%,var(--deep) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:64px;align-items:start}
+.pain-list{display:flex;flex-direction:column;gap:0}
+.pain-item{padding:28px 0;border-bottom:1px solid var(--border);display:flex;gap:20px;opacity:0;transform:translateX(-20px);transition:all .6s ease}
+.pain-item.visible{opacity:1;transform:translateX(0)}
+.pain-num{font-family:'Sora',sans-serif;font-size:32px;font-weight:800;color:var(--border2);line-height:1;flex-shrink:0;width:40px;transition:color .3s}
+.pain-item:hover .pain-num{color:var(--violet3)}
+.pain-body h3{font-family:'Sora',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.pain-body p{font-size:14px;color:var(--muted);line-height:1.75}
+.problem-right{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px;position:sticky;top:100px}
+.prob-chart-title{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px}
+.bar-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.bar-label{font-size:12px;font-weight:700;color:var(--off);min-width:90px}
+.bar-track{flex:1;height:8px;background:rgba(255,255,255,0.05);border-radius:100px;overflow:hidden}
+.bar-fill{height:100%;border-radius:100px;transition:width 1.5s cubic-bezier(.2,.8,.3,1);width:0}
+.bar-pct{font-size:11px;font-weight:800;color:var(--muted);min-width:32px;text-align:right}
+.prob-note{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);line-height:1.7}
+.prob-note strong{color:var(--cyan);font-weight:700}
+
+/* HOW */
+.steps-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-top:64px}
+.step-card{background:var(--night);padding:36px 28px;transition:background .3s;cursor:default;position:relative;overflow:hidden}
+.step-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.8,.3,1)}
+.step-card:hover{background:var(--surface)}
+.step-card:hover::after{transform:scaleX(1)}
+.step-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px;background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.2)}
+.step-n{font-family:'Sora',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.1em;color:var(--violet3);margin-bottom:10px;text-transform:uppercase}
+.step-card h3{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.5px;margin-bottom:10px}
+.step-card p{font-size:13px;color:var(--muted);line-height:1.75}
+
+/* FEATURES */
+.features-section{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;transition:all .35s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity .3s}
+.feat-card.violet::before{background:linear-gradient(90deg,var(--violet),transparent)}
+.feat-card.cyan::before{background:linear-gradient(90deg,var(--cyan),transparent)}
+.feat-card.gold::before{background:linear-gradient(90deg,var(--gold),transparent)}
+.feat-card:hover{border-color:rgba(255,255,255,0.12);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.feat-card:hover::before{opacity:1}
+.feat-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px;background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.2)}
+.feat-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;border-radius:100px;padding:3px 10px;margin-bottom:12px}
+.feat-badge.free{background:rgba(34,209,122,0.1);border:1px solid rgba(34,209,122,0.2);color:var(--green)}
+.feat-badge.pro{background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.2);color:var(--violet3)}
+.feat-badge.elite{background:rgba(255,179,64,0.1);border:1px solid rgba(255,179,64,0.2);color:var(--gold)}
+.feat-card h3{font-family:'Sora',sans-serif;font-size:16px;font-weight:700;letter-spacing:-0.5px;margin-bottom:10px}
+.feat-card p{font-size:13px;color:var(--muted);line-height:1.75}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--night);border-top:1px solid var(--border)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.testi-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;position:relative;overflow:hidden;transition:all .3s}
+.testi-card:hover{border-color:rgba(124,111,255,0.3);transform:translateY(-3px)}
+.testi-quote{font-size:32px;color:var(--violet3);margin-bottom:16px;line-height:1;font-family:'Sora',sans-serif}
+.testi-text{font-size:14px;color:var(--off);line-height:1.8;margin-bottom:24px;font-weight:400}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:15px;font-weight:800;flex-shrink:0}
+.testi-name{font-size:14px;font-weight:700;color:var(--white);letter-spacing:-0.3px}
+.testi-role{font-size:12px;color:var(--muted);margin-top:2px}
+.testi-stars{color:var(--gold);font-size:12px;margin-bottom:8px;letter-spacing:2px}
+
+/* PRICING */
+.pricing-section{background:var(--night)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
+.plan-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px 28px;transition:all .4s cubic-bezier(.2,.8,.3,1);position:relative;overflow:hidden}
+.plan-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,0.4)}
+.plan-card.featured{background:linear-gradient(145deg,rgba(124,111,255,0.12),rgba(0,212,200,0.05));border-color:rgba(124,111,255,0.4)}
+.plan-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan))}
+.plan-card.elite-card{border-color:rgba(255,179,64,0.3)}
+.plan-card.elite-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--rose))}
+.plan-badge{font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;display:inline-block;margin-bottom:20px;background:linear-gradient(135deg,rgba(124,111,255,0.2),rgba(0,212,200,0.1));border:1px solid rgba(124,111,255,0.3);color:var(--violet3);border-radius:100px;padding:4px 12px}
+.plan-name{font-family:'Sora',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.plan-price{font-family:'Sora',sans-serif;font-size:50px;font-weight:800;letter-spacing:-3px;line-height:1;margin-bottom:6px}
+.plan-price sub{font-size:15px;font-weight:500;letter-spacing:0;vertical-align:middle;color:var(--muted)}
+.plan-period{font-size:12px;color:var(--dim);margin-bottom:28px;font-weight:500}
+.plan-divider{height:1px;background:var(--border);margin-bottom:24px}
+.plan-feat{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.5}
+.plan-feat.on{color:var(--off)}
+.feat-check{font-size:13px;flex-shrink:0;margin-top:1px}
+.feat-check.yes{color:var(--green)}
+.feat-check.no{color:var(--dim)}
+.feat-desc{font-size:11px;color:var(--dim);display:block;margin-top:2px}
+.plan-btn{width:100%;margin-top:28px;padding:14px;border-radius:100px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;border:1px solid var(--border2);background:transparent;color:var(--off)}
+.plan-btn:hover{border-color:var(--muted);color:var(--white)}
+.plan-card.featured .plan-btn{background:linear-gradient(135deg,var(--violet),var(--violet2));color:var(--white);border-color:transparent;box-shadow:0 4px 24px rgba(124,111,255,0.4)}
+.plan-card.featured .plan-btn:hover{box-shadow:0 8px 40px rgba(124,111,255,0.6);transform:translateY(-1px)}
+.plan-card.elite-card .plan-btn{background:linear-gradient(135deg,rgba(255,179,64,0.15),rgba(255,95,126,0.1));border-color:rgba(255,179,64,0.3);color:var(--gold)}
+.plan-card.elite-card .plan-btn:hover{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--night)}
+
+/* FINAL CTA */
+.final-section{padding:120px 48px;background:linear-gradient(180deg,var(--night) 0%,var(--deep) 100%);border-top:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
+.final-orb{position:absolute;top:50%;left:50%;width:700px;height:400px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(124,111,255,0.15) 0%,transparent 65%);filter:blur(40px);pointer-events:none}
+.final-h2{font-family:'Sora',sans-serif;font-size:clamp(48px,6vw,78px);font-weight:800;letter-spacing:-3px;line-height:1.0;position:relative;z-index:1;margin-bottom:20px}
+.final-sub{font-size:17px;color:var(--muted);font-weight:400;line-height:1.75;margin-bottom:48px;position:relative;z-index:1}
+.final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.final-note{font-size:12px;color:var(--dim);margin-top:20px;position:relative;z-index:1;font-weight:600}
+
+footer{background:var(--deep);border-top:1px solid var(--border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.f-logo{font-family:'Sora',sans-serif;font-size:16px;font-weight:800;letter-spacing:-0.5px;background:linear-gradient(135deg,var(--white) 40%,var(--violet3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.f-links{display:flex;gap:24px}
+.f-link{font-size:13px;color:var(--dim);text-decoration:none;transition:color .2s;font-weight:500}
+.f-link:hover{color:var(--muted)}
+.f-copy{font-size:12px;color:var(--dim);font-weight:500}
+
+[data-anim]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+[data-anim].in{opacity:1;transform:none}
+[data-anim-left]{opacity:0;transform:translateX(-24px);transition:opacity .7s ease,transform .7s ease}
+[data-anim-left].in{opacity:1;transform:none}
+[data-anim-right]{opacity:0;transform:translateX(24px);transition:opacity .7s ease,transform .7s ease}
+[data-anim-right].in{opacity:1;transform:none}
+
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px}
+  .hero-right{display:none}
+  .problem-grid,.steps-wrap,.features-grid,.testi-grid,.pricing-grid{grid-template-columns:1fr}
+  .steps-wrap{grid-template-columns:1fr}
+  nav{padding:16px 24px}
+  .section{padding:72px 24px}
+  footer{padding:24px;flex-direction:column;text-align:center}
+  .final-section{padding:80px 24px}
+  .ticker-wrap{padding:20px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+
+<nav id="nav">
+  <div class="logo">JobDirect</div>
+  <div class="nav-links">
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#testimonials" class="nav-link">Reviews</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="https://instagram.com/jobdirect.in" target="_blank" class="nav-link">Instagram</a>
+    <button class="nav-cta" onclick="document.getElementById('final').scrollIntoView({behavior:'smooth'})">Download Free →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="grid-bg"></div>
+  <div class="hero-left">
+    <div class="badge"><div class="badge-pulse"></div>Now live in India</div>
+    <h1>
+      <span class="h1-line">Apply direct.</span>
+      <span class="h1-line h1-grad">No recruiters.</span>
+      <span class="h1-line h1-gold">No middlemen.</span>
+    </h1>
+    <p class="hero-sub">We scan <strong>thousands of career pages</strong> every 10 minutes. The moment a role goes live at Stripe, Databricks, PhonePe or Oracle — you're notified first. AI scores your fit. You apply direct.</p>
+    <div class="hero-actions">
+      <a href="#final" class="btn-primary">📱 Download Free</a>
+      <a href="#how" class="btn-ghost">See how it works →</a>
+    </div>
+    <p class="hero-note">Free to download · No credit card · Available on iOS &amp; Android</p>
+  </div>
+  <div class="hero-right">
+    <div class="phone-outer">
+      <div class="phone-glow"></div>
+      <div class="phone">
+        <div class="phone-bar">
+          <span class="phone-title">JobDirect</span>
+          <span class="live-chip"><span class="live-dot"></span>Live</span>
+        </div>
+        <div class="phone-body">
+          <div class="job-card hot">
+            <div class="jc-top"><div class="jc-company">Stripe</div><div class="new-tag">4 min ago</div></div>
+            <div class="jc-role">Senior Backend Engineer</div>
+            <div class="jc-bottom"><span class="jc-tag">Bangalore</span><span class="jc-tag">Full-time</span><span class="jc-match high">91% match</span></div>
+          </div>
+          <div class="job-card">
+            <div class="jc-top"><div class="jc-company">PhonePe</div><span style="font-size:10px;color:var(--dim);font-weight:600">17 min ago</span></div>
+            <div class="jc-role">HRBP Lead — Mass Retail</div>
+            <div class="jc-bottom"><span class="jc-tag">Bangalore</span><span class="jc-tag">Hybrid</span><span class="jc-match">78% match</span></div>
+          </div>
+          <div class="job-card">
+            <div class="jc-top"><div class="jc-company">Databricks</div><span style="font-size:10px;color:var(--dim);font-weight:600">38 min ago</span></div>
+            <div class="jc-role">Data Engineer</div>
+            <div class="jc-bottom"><span class="jc-tag">Hyderabad</span><span class="jc-tag">Full-time</span><span class="jc-match">72% match</span></div>
+          </div>
+          <div class="comp-bar">
+            <div class="comp-icon">🧠</div>
+            <div class="comp-text"><div class="comp-label">Alfie says</div><div class="comp-val">Strong match — Apply now</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER with logos -->
+<div class="ticker-wrap">
+  
+  <div class="ticker-track">
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/stripe.com" onerror="this.style.display='none'" alt="Stripe"> Stripe</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/databricks.com" onerror="this.style.display='none'" alt="Databricks"> Databricks</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/phonepe.com" onerror="this.style.display='none'" alt="PhonePe"> PhonePe</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/oracle.com" onerror="this.style.display='none'" alt="Oracle"> Oracle</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/mastercard.com" onerror="this.style.display='none'" alt="Mastercard"> Mastercard</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/salesforce.com" onerror="this.style.display='none'" alt="Salesforce"> Salesforce</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/razorpay.com" onerror="this.style.display='none'" alt="Razorpay"> Razorpay</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/groww.in" onerror="this.style.display='none'" alt="Groww"> Groww</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/datadoghq.com" onerror="this.style.display='none'" alt="Datadog"> Datadog</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/mongodb.com" onerror="this.style.display='none'" alt="MongoDB"> MongoDB</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/netflix.com" onerror="this.style.display='none'" alt="Netflix"> Netflix</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/adobe.com" onerror="this.style.display='none'" alt="Adobe"> Adobe</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/deloitte.com" onerror="this.style.display='none'" alt="Deloitte"> Deloitte</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/pwc.com" onerror="this.style.display='none'" alt="PwC India"> PwC India</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/cred.club" onerror="this.style.display='none'" alt="CRED"> CRED</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/meesho.com" onerror="this.style.display='none'" alt="Meesho"> Meesho</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/accenture.com" onerror="this.style.display='none'" alt="Accenture"> Accenture</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/stripe.com" onerror="this.style.display='none'" alt="Stripe"> Stripe</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/databricks.com" onerror="this.style.display='none'" alt="Databricks"> Databricks</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/phonepe.com" onerror="this.style.display='none'" alt="PhonePe"> PhonePe</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/oracle.com" onerror="this.style.display='none'" alt="Oracle"> Oracle</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/mastercard.com" onerror="this.style.display='none'" alt="Mastercard"> Mastercard</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/salesforce.com" onerror="this.style.display='none'" alt="Salesforce"> Salesforce</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/razorpay.com" onerror="this.style.display='none'" alt="Razorpay"> Razorpay</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/groww.in" onerror="this.style.display='none'" alt="Groww"> Groww</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/datadoghq.com" onerror="this.style.display='none'" alt="Datadog"> Datadog</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/mongodb.com" onerror="this.style.display='none'" alt="MongoDB"> MongoDB</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/netflix.com" onerror="this.style.display='none'" alt="Netflix"> Netflix</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/adobe.com" onerror="this.style.display='none'" alt="Adobe"> Adobe</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/deloitte.com" onerror="this.style.display='none'" alt="Deloitte"> Deloitte</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/pwc.com" onerror="this.style.display='none'" alt="PwC India"> PwC India</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/cred.club" onerror="this.style.display='none'" alt="CRED"> CRED</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/meesho.com" onerror="this.style.display='none'" alt="Meesho"> Meesho</span><span class="t-sep">·</span>
+    <span class="t-pill"><img class="t-logo" src="https://unavatar.io/accenture.com" onerror="this.style.display='none'" alt="Accenture"> Accenture</span><span class="t-sep">·</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section problem-section" id="problem">
+  <div class="section-eyebrow">The problem</div>
+  <div class="problem-grid">
+    <div data-anim-left>
+      <h2 class="sec-h2">Job portals are rigged<br>against you.</h2>
+      <p class="sec-sub">Every job portal in India profits from your desperation. They charge companies to post. They charge you to be visible. Then they slow everything down with recruiter layers.</p>
+      <div class="pain-list" style="margin-top:40px">
+        <div class="pain-item"><div class="pain-num">01</div><div class="pain-body"><h3>You're always too late</h3><p>By the time a role appears on Naukri or LinkedIn, hundreds have already applied directly. First movers get 3× more callbacks.</p></div></div>
+        <div class="pain-item"><div class="pain-num">02</div><div class="pain-body"><h3>Recruiters ghost you</h3><p>Your resume gets "processed" and you never hear back. You have no idea if you were even a good fit.</p></div></div>
+        <div class="pain-item"><div class="pain-num">03</div><div class="pain-body"><h3>Zero visibility into fit</h3><p>How qualified are you for this role? Are 500 people better than you applying? You're guessing every time.</p></div></div>
+        <div class="pain-item"><div class="pain-num">04</div><div class="pain-body"><h3>Pay to be seen</h3><p>Naukri Premium. LinkedIn InMail. You pay to access jobs you deserve to access for free.</p></div></div>
+      </div>
+    </div>
+    <div data-anim-right>
+      <div class="problem-right">
+        <div class="prob-chart-title">Why professionals miss roles on portals</div>
+        <div class="bar-row"><span class="bar-label">Too slow</span><div class="bar-track"><div class="bar-fill" style="background:linear-gradient(90deg,var(--violet),var(--violet3))" data-w="87"></div></div><span class="bar-pct">87%</span></div>
+        <div class="bar-row"><span class="bar-label">Invisible</span><div class="bar-track"><div class="bar-fill" style="background:linear-gradient(90deg,var(--rose),#FF9B5E)" data-w="73"></div></div><span class="bar-pct">73%</span></div>
+        <div class="bar-row"><span class="bar-label">Bad matches</span><div class="bar-track"><div class="bar-fill" style="background:linear-gradient(90deg,var(--gold),var(--gold2))" data-w="65"></div></div><span class="bar-pct">65%</span></div>
+        <div class="bar-row"><span class="bar-label">Recruiter lag</span><div class="bar-track"><div class="bar-fill" style="background:linear-gradient(90deg,var(--cyan),var(--cyan2))" data-w="58"></div></div><span class="bar-pct">58%</span></div>
+        <div class="bar-row"><span class="bar-label">No feedback</span><div class="bar-track"><div class="bar-fill" style="background:linear-gradient(90deg,var(--green),var(--green2))" data-w="44"></div></div><span class="bar-pct">44%</span></div>
+        <div class="prob-note">JobDirect solves all five. <strong>Direct alerts in 10 minutes. AI match score. Apply straight to the company.</strong> No portal. No recruiter fee.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how" data-anim>
+  <div class="section-eyebrow">How it works</div>
+  <h2 class="sec-h2">Four steps.<br>Alert to applied.</h2>
+  <div class="steps-wrap">
+    <div class="step-card"><div class="step-icon">📄</div><div class="step-n">Step 01</div><h3>Upload resume once</h3><p>AI reads your DOCX instantly. Extracts your experience, skills, education. Update only when you change jobs.</p></div>
+    <div class="step-card"><div class="step-icon">🔍</div><div class="step-n">Step 02</div><h3>We scan thousands of career pages</h3><p>Every company's official career page checked around the clock. Greenhouse, Workday, Lever — all covered.</p></div>
+    <div class="step-card"><div class="step-icon">🔔</div><div class="step-n">Step 03</div><h3>Instant notification</h3><p>New role detected? You're notified within minutes — before most of India knows it exists.</p></div>
+    <div class="step-card"><div class="step-icon">🎯</div><div class="step-n">Step 04</div><h3>AI match + apply direct</h3><p>AI scores your fit, tailors your resume for the role, and you apply straight to the company. No middlemen.</p></div>
+    <div class="step-card"><div class="step-icon">🧑‍💼</div><div class="step-n">Step 05</div><h3>Alfie preps you</h3><p>Salary intel, interview prep, company culture, leadership contacts. Your personal career coach — per job.</p></div>
+    <div class="step-card"><div class="step-icon">✨</div><div class="step-n">Step 06</div><h3>Tailored resume, downloaded</h3><p>AI rewrites your resume specifically for each role. Download as PDF. Ready to send in 30 seconds.</p></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section features-section" id="features" data-anim>
+  <div class="section-eyebrow">Features</div>
+  <h2 class="sec-h2">Everything you need<br>to get hired faster.</h2>
+  <p class="sec-sub">Tools that no other Indian job platform offers. Built for serious candidates who want an unfair advantage.</p>
+  <div class="features-grid">
+    <div class="feat-card violet">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-badge free">Free</div>
+      <h3>Direct Company Listings</h3>
+      <p>Every job sourced directly from company career pages — Greenhouse, Workday and Lever. No agencies, no aggregators.</p>
+    </div>
+    <div class="feat-card cyan">
+      <div class="feat-icon">🧠</div>
+      <div class="feat-badge pro">Pro</div>
+      <h3>AI Match Score</h3>
+      <p>See your exact % fit for every job before you apply. Know which roles are worth your time and which aren't.</p>
+    </div>
+    <div class="feat-card gold">
+      <div class="feat-icon">✨</div>
+      <div class="feat-badge elite">Elite</div>
+      <h3>AI Resume Tailoring</h3>
+      <p>Your resume rewritten specifically for each job. Tailored to the exact role, company and sector. PDF in 30 seconds.</p>
+    </div>
+    <div class="feat-card violet">
+      <div class="feat-icon">🔔</div>
+      <div class="feat-badge pro">Pro</div>
+      <h3>Real-time Job Alerts</h3>
+      <p>Set your preferences once. Get notified the moment a matching job opens — before anyone else sees it.</p>
+    </div>
+    <div class="feat-card cyan">
+      <div class="feat-icon">🧑‍💼</div>
+      <div class="feat-badge elite">Elite</div>
+      <h3>Alfie — Career Coach</h3>
+      <p>Salary ranges, interview prep, company culture and live company news. Per job. Every time you open a listing.</p>
+    </div>
+    <div class="feat-card gold">
+      <div class="feat-icon">👤</div>
+      <div class="feat-badge elite">Elite</div>
+      <h3>Leadership Contacts</h3>
+      <p>Key people at the company — HR head, India MD, relevant hiring managers — with direct LinkedIn links.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials" data-anim>
+  <div class="section-eyebrow">What users say</div>
+  <h2 class="sec-h2">Real people.<br>Real results.</h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"</div>
+      <div class="testi-text">I had been applying on Naukri for 3 months with zero response. Within 2 weeks of using JobDirect I had 3 interview calls — all from companies I actually wanted to work at. The AI match score told me exactly which roles to focus on.</div>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:rgba(124,111,255,0.2);color:var(--violet3)">P</div>
+        <div><div class="testi-name">Priya Sharma</div><div class="testi-role">Senior Product Manager · Bangalore</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"</div>
+      <div class="testi-text">The resume tailoring feature is genuinely incredible. I applied to a Databricks role with a tailored resume and got a call the next day. My previous generic resume had zero response from them over 2 months. The difference was night and day.</div>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:rgba(0,212,200,0.2);color:var(--cyan)">R</div>
+        <div><div class="testi-name">Rahul Nair</div><div class="testi-role">Data Engineer · Hyderabad</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"</div>
+      <div class="testi-text">Alfie is what sets this apart. Before my Mastercard interview I used the interview prep section and knew exactly what kind of questions to expect. Got the offer. I would have been completely unprepared without it.</div>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:rgba(255,179,64,0.2);color:var(--gold)">A</div>
+        <div><div class="testi-name">Ananya Krishnan</div><div class="testi-role">HR Business Partner · Mumbai</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"</div>
+      <div class="testi-text">I got notified about a Stripe opening 8 minutes after it went live. Applied immediately. The hiring manager told me I was one of the first 5 applicants. I got to the final round. Being early genuinely matters and this app gets you there.</div>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:rgba(255,95,126,0.2);color:var(--rose)">K</div>
+        <div><div class="testi-name">Karan Mehta</div><div class="testi-role">Backend Engineer · Bangalore</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"</div>
+      <div class="testi-text">As someone switching from a non-tech HR background into a tech company, the match score and suggestions helped me understand exactly what was missing from my resume. Fixed those gaps and landed a role at Oracle within 6 weeks.</div>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:rgba(34,209,122,0.2);color:var(--green)">S</div>
+        <div><div class="testi-name">Sneha Iyer</div><div class="testi-role">HRBP · Oracle India</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote">"</div>
+      <div class="testi-text">Deleted Naukri after the first week. The quality of roles on JobDirect is completely different — actual companies, actual hiring, no ghost jobs. The For You feed knows what I want better than I do after setting my preferences once.</div>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:rgba(124,111,255,0.2);color:var(--violet3)">V</div>
+        <div><div class="testi-name">Vikram Joshi</div><div class="testi-role">Engineering Manager · Pune</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing" data-anim>
+  <div class="section-eyebrow">Pricing</div>
+  <h2 class="sec-h2">Start free.<br>Upgrade when you're serious.</h2>
+  <p class="sec-sub">One tailored resume that lands you a better job pays for Elite many times over.</p>
+  <div class="pricing-grid">
+    <div class="plan-card">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">₹0 <sub>forever</sub></div>
+      <div class="plan-period">No credit card required</div>
+      <div class="plan-divider"></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Unlimited job browsing<span class="feat-desc">See all live jobs from top companies</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Search &amp; filters<span class="feat-desc">Role, sector, location</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>5 job detail views/day<span class="feat-desc">Full details for 5 roles daily</span></div></div>
+      <div class="plan-feat"><span class="feat-check no">✗</span> AI Match Score</div>
+      <div class="plan-feat"><span class="feat-check no">✗</span> Job alerts</div>
+      <div class="plan-feat"><span class="feat-check no">✗</span> Resume tailoring</div>
+      <button class="plan-btn" onclick="document.getElementById('final').scrollIntoView({behavior:'smooth'})">Download Free</button>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-badge">⭐ Most Popular</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">₹699 <sub>/mo</sub></div>
+      <div class="plan-period">Find the right jobs, know your fit</div>
+      <div class="plan-divider"></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Unlimited job views<span class="feat-desc">No daily limits, ever</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Save jobs<span class="feat-desc">Bookmark roles to revisit</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>AI Match Score<span class="feat-desc">Your % fit for every job</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Resume Suggestions<span class="feat-desc">Specific tips per job</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Real-time alerts<span class="feat-desc">Notified when a match opens</span></div></div>
+      <div class="plan-feat"><span class="feat-check no">✗</span> Resume Tailoring</div>
+      <div class="plan-feat"><span class="feat-check no">✗</span> Alfie Career Coach</div>
+      <button class="plan-btn" onclick="document.getElementById('final').scrollIntoView({behavior:'smooth'})">Get Pro →</button>
+    </div>
+    <div class="plan-card elite-card">
+      <div class="plan-name">Elite</div>
+      <div class="plan-price" style="background:linear-gradient(135deg,var(--gold),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">₹1,099 <sub style="-webkit-text-fill-color:var(--muted)">/mo</sub></div>
+      <div class="plan-period">Find, prepare, apply and stand out</div>
+      <div class="plan-divider"></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Everything in Pro<span class="feat-desc">All Pro features included</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>AI Resume Tailoring<span class="feat-desc">Rewritten per job, PDF download</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Alfie Career Coach<span class="feat-desc">Salary, interview prep, company intel</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Leadership contacts<span class="feat-desc">Key people with LinkedIn links</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Daily EOD Digest<span class="feat-desc">Evening summary of matching jobs</span></div></div>
+      <div class="plan-feat on"><span class="feat-check yes">✓</span><div>Easy Apply<span class="feat-desc">Apply in 60 seconds</span></div></div>
+      <button class="plan-btn" onclick="document.getElementById('final').scrollIntoView({behavior:'smooth'})">Get Elite →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section" id="final">
+  <div class="final-orb"></div>
+  <div class="final-h2" data-anim>Your next job<br><span style="background:linear-gradient(135deg,var(--violet3),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">is already posted.</span></div>
+  <p class="final-sub" data-anim>Are you seeing it? Download JobDirect free and apply directly to top companies in India.</p>
+  <div class="final-actions" data-anim>
+    <a href="https://apps.apple.com" class="btn-primary" id="ios-link">🍎 Download for iOS</a>
+    <a href="https://play.google.com" class="btn-primary" style="background:linear-gradient(135deg,var(--cyan2),var(--green2))" id="android-link">▶ Download for Android</a>
+  </div>
+  <p style="font-size:12px;color:var(--dim);margin-top:12px;position:relative;z-index:1">Coming soon to App Store and Google Play</p>
+  <p class="final-note">Free to download · No credit card · Available on iOS &amp; Android</p>
+</section>
+
+<footer>
+  <div class="f-logo">JobDirect</div>
+  <div class="f-links">
+    <a href="#features" class="f-link">Features</a>
+    <a href="#pricing" class="f-link">Pricing</a>
+    <a href="https://instagram.com/jobdirect.in" target="_blank" class="f-link">Instagram</a>
+    <a href="mailto:support@jobdirect.in" class="f-link">Support</a>
+    <a href="/privacy" class="f-link">Privacy Policy</a>
+    <a href="/terms" class="f-link">Terms of Service</a>
+  </div>
+  <div class="f-copy">© 2026 JobDirect. Made in India 🇮🇳</div>
+</footer>
+
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
+document.querySelectorAll('button,a,.feat-card,.testi-card,.plan-card,.step-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='16px';cur.style.height='16px';ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(124,111,255,0.6)'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(124,111,255,0.4)'});
+});
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40));
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.pain-item').forEach((p,i)=>setTimeout(()=>p.classList.add('visible'),i*120));
+      e.target.querySelectorAll('.bar-fill').forEach(b=>setTimeout(()=>{b.style.width=b.dataset.w+'%'},300));
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('[data-anim],[data-anim-left],[data-anim-right]').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
