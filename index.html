@@ -77,6 +77,9 @@ h1{font-family:'Sora',sans-serif;font-size:clamp(44px,5vw,70px);font-weight:800;
 @keyframes pulse-glow2{0%,100%{box-shadow:0 0 4px var(--green)}50%{box-shadow:0 0 12px var(--green)}}
 .phone-body{padding:12px 14px 16px;display:flex;flex-direction:column;gap:8px}
 .job-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 16px;position:relative;overflow:hidden}
+
+.job-card{transition:opacity 0.4s ease,transform 0.4s ease}
+.job-card.fading{opacity:0!important;transform:translateY(-8px)!important}
 .job-card.hot{border-color:rgba(0,212,200,0.3);background:linear-gradient(135deg,rgba(0,212,200,0.06),var(--card))}
 .jc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
 .jc-company{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
@@ -302,18 +305,18 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:32px 48
           <span class="phone-title">JobDirect</span>
           <span class="live-chip"><span class="live-dot"></span>Live</span>
         </div>
-        <div class="phone-body">
-          <div class="job-card hot">
+        <div class="phone-body" id="phone-feed">
+          <div class="job-card hot" id="pf-0">
             <div class="jc-top"><div class="jc-company">Stripe</div><div class="new-tag">4 min ago</div></div>
             <div class="jc-role">Senior Backend Engineer</div>
             <div class="jc-bottom"><span class="jc-tag">Bangalore</span><span class="jc-tag">Full-time</span><span class="jc-match high">91% match</span></div>
           </div>
-          <div class="job-card">
+          <div class="job-card" id="pf-1">
             <div class="jc-top"><div class="jc-company">PhonePe</div><span style="font-size:10px;color:var(--dim);font-weight:600">17 min ago</span></div>
             <div class="jc-role">HRBP Lead — Mass Retail</div>
             <div class="jc-bottom"><span class="jc-tag">Bangalore</span><span class="jc-tag">Hybrid</span><span class="jc-match">78% match</span></div>
           </div>
-          <div class="job-card">
+          <div class="job-card" id="pf-2">
             <div class="jc-top"><div class="jc-company">Databricks</div><span style="font-size:10px;color:var(--dim);font-weight:600">38 min ago</span></div>
             <div class="jc-role">Data Engineer</div>
             <div class="jc-bottom"><span class="jc-tag">Hyderabad</span><span class="jc-tag">Full-time</span><span class="jc-match">72% match</span></div>
@@ -626,6 +629,106 @@ function closeMenu(){
   document.body.style.position='';
   document.body.style.width='';
 }
+
+// Dynamic phone feed
+(function(){
+  var JOBS = [
+    {c:'Stripe',r:'Senior Backend Engineer',l:'Bangalore',m:'91%',hot:true},
+    {c:'PhonePe',r:'HRBP Lead',l:'Bangalore',m:'78%',hot:false},
+    {c:'Databricks',r:'Data Engineer',l:'Hyderabad',m:'72%',hot:false},
+    {c:'Mastercard',r:'Software Engineer III',l:'Pune',m:'85%',hot:true},
+    {c:'Salesforce',r:'Senior SWE',l:'Hyderabad',m:'88%',hot:true},
+    {c:'Razorpay',r:'Product Manager',l:'Bangalore',m:'80%',hot:false},
+    {c:'Adobe',r:'UX Designer',l:'Noida',m:'76%',hot:false},
+    {c:'Morgan Stanley',r:'Analyst',l:'Mumbai',m:'82%',hot:true},
+    {c:'Groww',r:'Android Engineer',l:'Bangalore',m:'90%',hot:true},
+    {c:'Visa',r:'Data Scientist',l:'Bangalore',m:'79%',hot:false},
+    {c:'Meesho',r:'Backend Engineer',l:'Bangalore',m:'87%',hot:true},
+    {c:'Palo Alto Networks',r:'Security Engineer',l:'Bangalore',m:'83%',hot:false},
+    {c:'Datadog',r:'Solutions Engineer',l:'Bangalore',m:'84%',hot:true},
+    {c:'GSK',r:'Data Engineer',l:'Bangalore',m:'77%',hot:false},
+    {c:'Nike',r:'Product Manager',l:'Bangalore',m:'81%',hot:true}
+  ];
+
+  var TIMES = ['1 min ago','2 min ago','4 min ago','6 min ago','9 min ago','12 min ago','17 min ago','22 min ago','31 min ago','38 min ago','45 min ago','52 min ago'];
+
+  // Try Firebase
+  try {
+    var s = document.createElement('script');
+    s.type = 'module';
+    s.innerHTML = [
+      "import{initializeApp}from'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';",
+      "import{getFirestore,collection,query,orderBy,limit,getDocs}from'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';",
+      "var app=initializeApp({apiKey:'AIzaSyAEEJaAlHrURjja4QZ6qzP0kKyNdObvEBc',authDomain:'jobdirect-7fa78.firebaseapp.com',projectId:'jobdirect-7fa78'});",
+      "var db=getFirestore(app);",
+      "getDocs(query(collection(db,'jobs'),orderBy('savedAt','desc'),limit(60))).then(function(snap){",
+      "  if(!snap.empty){",
+      "    var live=snap.docs.map(function(d){return d.data();}).filter(function(j){return j.title&&j.company&&j.location;});",
+      "    if(live.length>=3)window.__jdJobs=live;",
+      "  }",
+      "}).catch(function(){});",
+    ].join('');
+    document.head.appendChild(s);
+  } catch(e){}
+
+  var idx = 0;
+  var cardIdx = 0;
+
+  function getLocation(loc) {
+    if(!loc) return 'India';
+    var l = loc.toLowerCase();
+    if(l.indexOf('bangalore')>-1||l.indexOf('bengaluru')>-1) return 'Bangalore';
+    if(l.indexOf('hyderabad')>-1) return 'Hyderabad';
+    if(l.indexOf('mumbai')>-1) return 'Mumbai';
+    if(l.indexOf('pune')>-1) return 'Pune';
+    if(l.indexOf('noida')>-1) return 'Noida';
+    if(l.indexOf('gurgaon')>-1||l.indexOf('gurugram')>-1) return 'Gurgaon';
+    if(l.indexOf('chennai')>-1) return 'Chennai';
+    return 'India';
+  }
+
+  function rotateCard() {
+    var card = document.getElementById('pf-' + cardIdx);
+    if(!card) return;
+
+    card.classList.add('fading');
+
+    setTimeout(function(){
+      var job, ago, hot, match;
+      var t = TIMES[Math.floor(Math.random()*TIMES.length)];
+
+      if(window.__jdJobs && window.__jdJobs.length > 3) {
+        var j = window.__jdJobs[idx % window.__jdJobs.length];
+        job = {c: j.company, r: (j.title||'').slice(0,30), l: getLocation(j.location)};
+        match = (75 + Math.floor(Math.random()*18)) + '%';
+        hot = Math.random() > 0.55;
+        idx++;
+      } else {
+        job = JOBS[idx % JOBS.length];
+        match = job.m;
+        hot = job.hot;
+        idx++;
+      }
+
+      var matchCls = parseInt(match) >= 85 ? 'jc-match high' : 'jc-match';
+      var topHtml = hot
+        ? '<div class="jc-company">'+job.c+'</div><div class="new-tag">'+t+'</div>'
+        : '<div class="jc-company">'+job.c+'</div><span style="font-size:10px;color:var(--dim);font-weight:600">'+t+'</span>';
+
+      card.querySelector('.jc-top').innerHTML = topHtml;
+      card.querySelector('.jc-role').textContent = job.r;
+      card.querySelector('.jc-bottom').innerHTML = '<span class="jc-tag">'+job.l+'</span><span class="jc-tag">Full-time</span><span class="'+matchCls+'">'+match+' match</span>';
+
+      if(hot) card.classList.add('hot'); else card.classList.remove('hot');
+      card.classList.remove('fading');
+
+      cardIdx = (cardIdx + 1) % 3;
+    }, 420);
+  }
+
+  setInterval(rotateCard, 3200);
+})();
+
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
