@@ -198,6 +198,25 @@
     .marquee{animation:none !important;}
   }
   :focus-visible { outline:2px solid var(--iris-br); outline-offset:3px; border-radius:4px; }
+
+  /* Pricing */
+  .pricing { padding: 96px 0; }
+  .pricing h2 { font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 12px; }
+  .pricing .sub { color: var(--sub); font-size: 16px; margin-bottom: 48px; }
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
+  .price-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px 24px; position: relative; }
+  .price-featured { border-color: #9B91FF; background: #9B91FF0D; }
+  .price-elite { border-color: #7C3AED; background: #7C3AED0D; }
+  .price-badge { display: inline-block; font-size: 11px; font-weight: 700; color: #9B91FF; background: #9B91FF1A; border-radius: 20px; padding: 4px 12px; margin-bottom: 12px; letter-spacing: .05em; text-transform: uppercase; }
+  .price-badge-elite { color: #A78BFA; background: #7C3AED1A; }
+  .price-name { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .price-amt { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 800; margin-bottom: 8px; }
+  .price-amt span { font-size: 16px; font-weight: 400; color: var(--sub); }
+  .price-desc { font-size: 14px; color: var(--sub); margin-bottom: 24px; }
+  .price-feats { list-style: none; padding: 0; margin: 0; }
+  .price-feats li { font-size: 14px; color: var(--text); padding: 6px 0; border-top: 1px solid var(--line); }
+  .price-feats li:first-child { border-top: none; }
+  @media(max-width:768px) { .price-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -319,6 +338,52 @@
       <div class="t-card"><div class="stars">★★★★★</div><p>"Three months on a portal with zero response. Within two weeks of JobDirect I had three interview calls — all companies I actually wanted. The match score told me exactly which roles to focus on."</p><div class="t-who"><span class="t-av">P</span><div><b>Priya Sharma</b><small>Senior Product Manager · Bangalore</small></div></div></div>
       <div class="t-card"><div class="stars">★★★★★</div><p>"The resume tailoring is genuinely incredible. I applied to a Databricks role with a tailored resume and got a call the next day. My generic resume had zero response over two months. Night and day."</p><div class="t-who"><span class="t-av">R</span><div><b>Rahul Nair</b><small>Data Engineer · Hyderabad</small></div></div></div>
       <div class="t-card"><div class="stars">★★★★★</div><p>"Alfie sets this apart. Before my Mastercard interview I used the prep section and knew exactly what to expect. Got the offer. I'd have been completely unprepared otherwise."</p><div class="t-who"><span class="t-av">A</span><div><b>Ananya Krishnan</b><small>HR Business Partner · Mumbai</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="tag">Pricing</div>
+    <h2>Start free. Upgrade when ready.</h2>
+    <p class="sub">Every feature is free to try once. No credit card required.</p>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-amt">₹0<span>/month</span></div>
+        <div class="price-desc">For job seekers getting started</div>
+        <ul class="price-feats">
+          <li>✓ Unlimited job browsing</li>
+          <li>✓ Save jobs</li>
+          <li>✓ 2 AI Match Scores per day</li>
+          <li>✓ 2 Resume Suggestions (lifetime)</li>
+          <li>✓ 1 free trial of every feature</li>
+        </ul>
+      </div>
+      <div class="price-card price-featured">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-name">Pro</div>
+        <div class="price-amt">₹599<span>/month</span></div>
+        <div class="price-desc">For active job seekers</div>
+        <ul class="price-feats">
+          <li>✓ Unlimited AI Match Scores</li>
+          <li>✓ Unlimited Resume Suggestions</li>
+          <li>✓ Personalised Job Alerts</li>
+          <li>✓ Everything in Free</li>
+        </ul>
+      </div>
+      <div class="price-card price-elite">
+        <div class="price-badge price-badge-elite">Best Value</div>
+        <div class="price-name">Elite</div>
+        <div class="price-amt">₹999<span>/month</span></div>
+        <div class="price-desc">For serious candidates</div>
+        <ul class="price-feats">
+          <li>✓ AI Resume Tailoring</li>
+          <li>✓ Career Intelligence (Alfie)</li>
+          <li>✓ Daily EOD Digest</li>
+          <li>✓ Everything in Pro</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
